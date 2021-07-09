@@ -99,6 +99,7 @@ def backup_database(backup_dir: str, install_path: str, current_time: str) -> bo
         backup_file = os.path.join(backup_dir, database + "-" + current_time + ".bak")
         cmd = [
             "/usr/local/opt/mysql-client/bin/mysqldump",
+            "--column-statistics=0",
             f"--user={os.getenv('CONNECTION_USERNAME')}",
             f"--password={os.getenv('CONNECTION_PASSWORD')}",
             f"--host={os.getenv('CONNECTION_HOST')}",
