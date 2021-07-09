@@ -373,7 +373,7 @@ if __name__ == "__main__":
 
             # attempt git fetch for update
             log.info("Starting Git fetch...")
-            if not run_command(["git", "fetch", "origin", "master"]):
+            if not run_command(["git", "fetch", "origin", "main"]):
                 exit()
             if not run_command(["git", "fetch", "--all", "--tags"]):
                 exit()
